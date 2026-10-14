@@ -1,0 +1,9 @@
+node_modules/
+__pycache__/
+*.pyc
+.DS_Store
+browser_data/
+storage_state/
+sessions/
+logs/
+*.log

@@ -1,0 +1,8 @@
+{
+  "name": "boss-zhipin-auto",
+  "version": "1.1.0",
+  "private": true,
+  "dependencies": {
+    "playwright-core": "^1.54.0"
+  }
+}

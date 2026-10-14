@@ -1,0 +1,91 @@
+{
+  "user_profile": {
+    "target_role": "通用求职者",
+    "job_title": "",
+    "location": "杭州",
+    "commute_minutes": 50,
+    "expected_salary": "",
+    "skills": [],
+    "strengths": ["学习快", "沟通顺畅", "执行力强", "能根据岗位需求快速补齐业务理解"],
+    "experience_highlights": [],
+    "industry_keywords": [],
+    "transferable_skills": ["客户沟通", "信息整理", "内容表达", "项目推进", "需求理解", "复盘优化"],
+    "resume_type": "图片简历",
+    "portfolio_link": "百度网盘：https://pan.baidu.com/s/<YOUR_SHARE_ID> 提取码：<CODE>",
+    "available_date": "随时到岗",
+    "greeting_style": "老手、自然、业务理解强，不写空话，不像模板群发"
+  },
+  "search_params": {
+    "keyword": "",
+    "city_code": "101210100",
+    "city_name": "杭州",
+    "salary_min": "",
+    "accepted_districts": ["拱墅区", "西湖区", "上城区", "余杭区"],
+    "excluded_districts": ["富阳区", "临安区", "桐庐县", "建德市", "淳安县"]
+  },
+  "platforms": {
+    "default": "boss",
+    "enabled": ["boss", "liepin", "zhilian"],
+    "boss": {
+      "display_name": "BOSS直聘",
+      "base_url": "https://www.zhipin.com",
+      "workflow": "chat",
+      "runner": "scripts/safari_boss_runner.py",
+      "runners": {"darwin": "scripts/safari_boss_runner.py", "win32": "scripts/chrome_boss_runner.js", "default": "scripts/chrome_boss_runner.js"},
+      "browser": "macOS: Safari; Windows: Microsoft Edge/Google Chrome",
+      "status": "implemented",
+      "notes": "聊天型投递；使用 Safari runner，按 图片简历 -> 作品集链接 -> 招呼语 执行。"
+    },
+    "liepin": {
+      "display_name": "猎聘",
+      "base_url": "https://www.liepin.com",
+      "city_code": "070020",
+      "workflow": "detail_apply",
+      "runner": "scripts/safari_liepin_runner.py",
+      "runners": {"darwin": "scripts/safari_liepin_runner.py", "win32": "scripts/liepin_runner.js", "default": "scripts/liepin_runner.js"},
+      "browser": "macOS: Safari; Windows: Microsoft Edge/Google Chrome",
+      "status": "implemented",
+      "notes": "传统详情页投递型；默认使用 Safari 固定 runner。必须先打开 key-only 搜索页，再导航到带 city/dq 的结果页并回读验证；先处理附件简历弹窗，再发招呼语。"
+    },
+    "zhilian": {
+      "display_name": "智联招聘",
+      "base_url": "https://www.zhaopin.com",
+      "workflow": "detail_apply",
+      "runner": "",
+      "browser": "Chrome/Edge 或 Safari",
+      "status": "planned",
+      "notes": "传统搜索/表单投递型；后续复用通用 JD 分析、打分、招呼语和日志。"
+    }
+  },
+  "greeting_rules": {
+    "max_chars": 220,
+    "min_jd_matches": 2,
+    "universal_skill_aliases": [
+      {"label": "销售转化", "aliases": ["销售", "转化", "成交", "邀约", "电销", "面销", "客户开发", "销售顾问"]},
+      {"label": "客户沟通", "aliases": ["客户", "沟通", "咨询", "服务", "维护", "回访", "答疑"]},
+      {"label": "课程/留学咨询", "aliases": ["留学", "课程", "教育", "咨询顾问", "规划", "申请", "院校", "签证"]},
+      {"label": "内容策划", "aliases": ["内容", "文案", "策划", "选题", "脚本", "新媒体", "运营"]},
+      {"label": "视频后期", "aliases": ["剪辑", "后期", "pr", "ae", "达芬奇", "调色", "包装", "tvc", "宣传片"]},
+      {"label": "行政协调", "aliases": ["行政", "协调", "资料", "表格", "档案", "流程", "对接"]},
+      {"label": "项目推进", "aliases": ["项目", "推进", "交付", "进度", "复盘", "执行", "落地"]},
+      {"label": "数据/表格", "aliases": ["数据", "excel", "表格", "统计", "分析", "报表"]},
+      {"label": "AI工具提效", "aliases": ["ai", "aigc", "chatgpt", "智能工具", "自动化", "提效"]}
+    ],
+    "universal_need_aliases": [
+      {"label": "结果导向", "aliases": ["结果", "目标", "业绩", "kpi", "转化率", "到访", "成交"]},
+      {"label": "响应及时", "aliases": ["响应", "及时", "效率", "快节奏", "抗压", "多任务"]},
+      {"label": "细致负责", "aliases": ["细致", "耐心", "责任心", "认真", "稳定", "长期"]},
+      {"label": "表达清楚", "aliases": ["表达", "讲解", "介绍", "沟通表达", "逻辑"]},
+      {"label": "审美判断", "aliases": ["审美", "风格", "调性", "创意", "视觉"]},
+      {"label": "独立推进", "aliases": ["独立", "自主", "闭环", "从0到1", "全流程"]}
+    ]
+  },
+  "automation": {
+    "max_daily_applications": 50,
+    "click_interval_seconds": 2.0,
+    "job_interval_seconds": 5.0,
+    "page_load_timeout_seconds": 10,
+    "hr_check_interval_jobs": 5,
+    "progress_report_interval_minutes": 30
+  }
+}
